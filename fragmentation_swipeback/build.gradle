@@ -1,17 +1,20 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.compileSdkVersion
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
-        minSdkVersion rootProject.minSdkVersion
-        targetSdkVersion rootProject.targetSdkVersion
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
 
         consumerProguardFiles 'proguard-rules.pro'
     }
 }
 
 dependencies {
-    compileOnly "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
-    compileOnly project(':fragmentation')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation project(':fragmentation')
 }
